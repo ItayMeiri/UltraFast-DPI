@@ -1,0 +1,487 @@
+C:\Users\ischelle\PycharmProjects\results_based\venv\Scripts\python.exe C:/Users/ischelle/PycharmProjects/results_based/test_models.py
+2022-09-02 17:58:25.297724: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-09-02 17:58:25.298092: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Loading app known/unknown
+Known size: 4121 Unknown size: 1057
+Loading malware known/unknown
+Known size: 5856 Unknown size: 2043
+TEST RAW - BEGIN
+MALWARE TF
+2022-09-02 17:59:11.820140: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-09-02 17:59:11.820796: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-09-02 17:59:11.821439: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-09-02 17:59:11.822085: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-09-02 17:59:11.822711: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-09-02 17:59:11.823565: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-09-02 17:59:11.824240: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-09-02 17:59:11.824868: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-09-02 17:59:11.825259: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-09-02 17:59:11.831220: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+******
+base_malware_cf
+[[3582   37]
+ [  91 3609]]
+acc: 0.9825112720316983
+recall: 0.9825907933354743
+precision: 0.9825382522593374
+F1: 0.9825110340255551
+TNR: 0 
+TPR: 0
+Rejection Rate: 0.0
+Purity: 0.9825112720316983
+Purity rate 2: 0.9825112720316983
+Their FDR: 1
+Thier TDR: 0
+normal acc, recall, etc 0.9825112720316983 0.9825907933354743 0.9825382522593374
+              precision    recall  f1-score   support
+
+      Benign       0.98      0.99      0.98      3619
+     Malware       0.99      0.98      0.98      3700
+
+    accuracy                           0.98      7319
+   macro avg       0.98      0.98      0.98      7319
+weighted avg       0.98      0.98      0.98      7319
+
+******
+APPLICATION TF
+******
+base_app_cf
+[[  35    0    0    2    0    0    0    1]
+ [   0   21    3    2    0    3    0    8]
+ [   0    0 1203    2    0    9    7   50]
+ [   0    0    0  383    0    1    0    7]
+ [   0    0    0    0   40    1    0    0]
+ [   0    2   23    6    0 2542    2   39]
+ [   0    0   21    0    0    4  240   15]
+ [   1    1   38    9    0   43    7  380]]
+acc: 0.9403999223451757
+recall: 0.8766483369659143
+precision: 0.9254142170908934
+F1: 0.8965236310395628
+TNR: 0 
+TPR: 0
+Rejection Rate: 0.0
+Purity: 0.9403999223451757
+Purity rate 2: 0.9403999223451757
+Their FDR: 1
+Thier TDR: 0
+normal acc, recall, etc 0.9403999223451757 0.8766483369659143 0.9254142170908934
+               precision    recall  f1-score   support
+
+      dropbox       0.97      0.92      0.95        38
+     facebook       0.88      0.57      0.69        37
+       google       0.93      0.95      0.94      1271
+    microsoft       0.95      0.98      0.96       391
+   teamviewer       1.00      0.98      0.99        41
+      twitter       0.98      0.97      0.97      2614
+      youtube       0.94      0.86      0.90       280
+uncategorized       0.76      0.79      0.78       479
+
+     accuracy                           0.94      5151
+    macro avg       0.93      0.88      0.90      5151
+ weighted avg       0.94      0.94      0.94      5151
+
+******
+TEST RAW - END
+TEST BASE WITH OOD DATA- BEGIN
+MALWARE
+Loading malware known/unknown
+Known size: 5856 Unknown size: 2043
+******
+base_ood_malware_cf
+[[2876   33    0]
+ [  78 2869    0]
+ [1537  506    0]]
+acc: 0.7273072540827953
+recall: 0.6540627671110594
+precision: 0.49407820596853597
+F1: 0.5600694636414542
+TNR: 1.0 
+TPR: 0.0
+Rejection Rate: 0.0
+Purity: 0.7273072540827953
+Purity rate 2: 0.9810450819672131
+Their FDR: 0.0
+Thier TDR: 0.0
+normal acc, recall, etc 0.7273072540827953 0.6540627671110594 0.49407820596853597
+C:\Users\ischelle\PycharmProjects\results_based\venv\lib\site-packages\sklearn\metrics\_classification.py:2141: UserWarning: labels size, 2, does not match size of target_names, 3
+  warnings.warn(
+              precision    recall  f1-score   support
+
+      Benign       0.64      0.99      0.78      2909
+     Malware       0.84      0.97      0.90      2947
+
+   micro avg       0.73      0.98      0.84      5856
+   macro avg       0.74      0.98      0.84      5856
+weighted avg       0.74      0.98      0.84      5856
+
+******
+APPLICATION
+Loading app known/unknown
+Known size: 4121 Unknown size: 1057
+C:\Users\ischelle\PycharmProjects\results_based\venv\lib\site-packages\sklearn\metrics\_classification.py:2141: UserWarning: labels size, 8, does not match size of target_names, 9
+  warnings.warn(
+******
+base_ood_app_cf
+[[  28    0    0    1    0    0    0    1    0]
+ [   0   15    2    2    0    2    0    7    0]
+ [   0    0  948    2    0    9    6   46    0]
+ [   0    0    0  313    0    1    0    7    0]
+ [   0    0    0    0   34    1    0    0    0]
+ [   0    2   22    4    0 2025    2   34    0]
+ [   0    0   16    0    0    4  195   12    0]
+ [   1    1   34    7    0   36    4  297    0]
+ [  29    2  199  153    0  251    7  416    0]]
+acc: 0.7444959443800695
+recall: 0.7736902942385867
+precision: 0.6446034380030503
+F1: 0.6857742187501574
+TNR: 1.0 
+TPR: 0.0
+Rejection Rate: 0.0
+Purity: 0.7444959443800695
+Purity rate 2: 0.9354525600582383
+Their FDR: 0.0
+Thier TDR: 0.0
+normal acc, recall, etc 0.7444959443800695 0.7736902942385867 0.6446034380030503
+               precision    recall  f1-score   support
+
+      dropbox       0.48      0.93      0.64        30
+     facebook       0.75      0.54      0.63        28
+       google       0.78      0.94      0.85      1011
+    microsoft       0.65      0.98      0.78       321
+   teamviewer       1.00      0.97      0.99        35
+      twitter       0.87      0.97      0.92      2089
+      youtube       0.91      0.86      0.88       227
+uncategorized       0.36      0.78      0.49       380
+
+    micro avg       0.74      0.94      0.83      4121
+    macro avg       0.73      0.87      0.77      4121
+ weighted avg       0.78      0.94      0.85      4121
+
+******
+BASE WITH OOD DATA- END
+K+1/ABSTENTION TEST BEGIN - APPLICATION
+C:\Users\ischelle\PycharmProjects\results_based\venv\lib\site-packages\sklearn\metrics\_classification.py:2141: UserWarning: labels size, 8, does not match size of target_names, 9
+  warnings.warn(
+******
+abstention_app
+[[  27    0    0    1    0    1    0    1    0]
+ [   0   12    1    0    0    2    2    5    6]
+ [   0    0  927    0    0    5   14   46   19]
+ [   0    0    3  297    0    5    0    7    9]
+ [   0    0    0    0   34    0    0    0    1]
+ [   1    1    4    0    0 2007   12   53   11]
+ [   0    0   10    0    0    3  208    5    1]
+ [   0    4   21    4    0   31   13  290   17]
+ [  36    2   78   62    0  110   15  186  568]]
+acc: 0.8363396392432908
+recall: 0.7796597793372824
+precision: 0.662409532189533
+F1: 0.7056741246094691
+TNR: 0.9844697888861926 
+TPR: 0.5373699148533586
+Rejection Rate: 0.12205484743144071
+Purity: 0.8336512781381152
+Purity rate 2: 0.9084826762246118
+Their FDR: 0.015530211113807368
+Thier TDR: 0.5373699148533586
+normal acc, recall, etc 0.8439551950560061 0.8133024143664234 0.762268885213443
+               precision    recall  f1-score   support
+
+      dropbox       0.42      0.90      0.57        30
+     facebook       0.63      0.55      0.59        22
+       google       0.89      0.93      0.91       992
+    microsoft       0.82      0.95      0.88       312
+   teamviewer       1.00      1.00      1.00        34
+      twitter       0.93      0.97      0.95      2078
+      youtube       0.79      0.92      0.85       226
+uncategorized       0.49      0.80      0.61       363
+
+    micro avg       0.84      0.94      0.88      4057
+    macro avg       0.75      0.88      0.79      4057
+ weighted avg       0.86      0.94      0.89      4057
+
+******
+K+1/ABSTENTION TEST END - APPLICATION
+TEST ODIN BEGIN - APP 0.0005
+Loading app known/unknown
+Known size: 4121 Unknown size: 1057
+162/162 [==============================] - 0s 1ms/step
+0.0 %
+Finished creating perturbed dataset
+162/162 [==============================] - 0s 1ms/step
+100.0 percentile acc: 0.7445 rejection rate 0.0 in: 0.0 out: 0.0
+95.0 percentile acc: 0.7697 rejection rate 0.05 in: 0.0342 out: 0.1116
+90.0 percentile acc: 0.7918 rejection rate 0.1 in: 0.0706 out: 0.2148
+85.0 percentile acc: 0.8194 rejection rate 0.1501 in: 0.1 out: 0.3453
+80.0 percentile acc: 0.8495 rejection rate 0.1995 in: 0.1267 out: 0.4834
+75.0 percentile acc: 0.8815 rejection rate 0.2501 in: 0.1558 out: 0.6178
+70.0 percentile acc: 0.9004 rejection rate 0.3001 in: 0.1985 out: 0.6963
+65.0 percentile acc: 0.9156 rejection rate 0.3499 in: 0.2458 out: 0.7559
+60.0 percentile acc: 0.9324 rejection rate 0.4 in: 0.2914 out: 0.8231
+55.0 percentile acc: 0.9505 rejection rate 0.45 in: 0.3395 out: 0.8808
+50.0 percentile acc: 0.9637 rejection rate 0.5 in: 0.3914 out: 0.9234
+45.0 percentile acc: 0.9679 rejection rate 0.5487 in: 0.4487 out: 0.9385
+40.0 percentile acc: 0.9734 rejection rate 0.6 in: 0.5093 out: 0.9536
+35.0 percentile acc: 0.9768 rejection rate 0.6501 in: 0.57 out: 0.9622
+30.0 percentile acc: 0.9826 rejection rate 0.6999 in: 0.6295 out: 0.9745
+25.0 percentile acc: 0.9892 rejection rate 0.7499 in: 0.6892 out: 0.9868
+20.0 percentile acc: 0.9952 rejection rate 0.7999 in: 0.7498 out: 0.9953
+15.0 percentile acc: 0.9974 rejection rate 0.8499 in: 0.8119 out: 0.9981
+10.0 percentile acc: 0.9962 rejection rate 0.8976 in: 0.8719 out: 0.9981
+5.0 percentile acc: 0.9972 rejection rate 0.9314 in: 0.9141 out: 0.9991
+best a 0.9637904468412943 best t 0.9948541829705239
+best purity 0.7470317885867483 thresh: 0.500299256926775 with acc: 0.7569006309148265
+BEST ACCURACY ODIN APP: 0.9637904468412943
+******
+odin_app_cf
+C:\Users\ischelle\PycharmProjects\results_based\venv\lib\site-packages\sklearn\metrics\_classification.py:2141: UserWarning: labels size, 7, does not match size of target_names, 9
+  warnings.warn(
+[[   6    0    0    0    0    0    0    0   24]
+ [   0    0    0    0    0    0    0    0   28]
+ [   0    0  647    0    0    0    0    0  364]
+ [   0    0    0  228    0    0    0    0   93]
+ [   0    0    0    0   14    0    0    0   21]
+ [   0    0    0    1    0 1455    0    1  632]
+ [   0    0    2    0    0    0   69    0  156]
+ [   0    0    6    0    0    3    0   83  288]
+ [   2    0   15   34    0    7    0   23  976]]
+acc: 0.9637904468412943
+recall: 0.8590790269203176
+precision: 0.7939333487368982
+F1: 0.8230217740054142
+TNR: 0.6102887648628974 
+TPR: 0.923368022705771
+Rejection Rate: 0.49864812668984165
+Purity: 0.5126768867924528
+Purity rate 2: 0.43687794656888423
+Their FDR: 0.3897112351371026
+Thier TDR: 0.923368022705771
+normal acc, recall, etc 0.671687910390112 0.4547222385685963 0.7477187043424292
+               precision    recall  f1-score   support
+
+      dropbox       0.75      1.00      0.86         6
+     facebook       0.97      1.00      0.98       647
+       google       0.87      1.00      0.93       228
+    microsoft       1.00      1.00      1.00        14
+   teamviewer       0.99      1.00      1.00      1457
+      twitter       1.00      0.97      0.99        71
+      youtube       0.78      0.90      0.83        92
+
+    micro avg       0.96      0.99      0.98      2515
+    macro avg       0.91      0.98      0.94      2515
+ weighted avg       0.97      0.99      0.98      2515
+
+******
+TEST ODIN END
+TEST BP APP - BEGIN
+0.0 percentile acc: 1.0 rejection rate 0.9998 in: 0.9998 out: 1.0
+5.0 percentile acc: 0.9884 rejection rate 0.95 in: 0.9379 out: 0.9972
+10.0 percentile acc: 0.9826 rejection rate 0.9 in: 0.8765 out: 0.9915
+15.0 percentile acc: 0.9743 rejection rate 0.8499 in: 0.8163 out: 0.9811
+20.0 percentile acc: 0.9701 rejection rate 0.7999 in: 0.7561 out: 0.9707
+25.0 percentile acc: 0.9583 rejection rate 0.7499 in: 0.6986 out: 0.9499
+30.0 percentile acc: 0.9543 rejection rate 0.6999 in: 0.6397 out: 0.9347
+35.0 percentile acc: 0.9509 rejection rate 0.6501 in: 0.5812 out: 0.9186
+40.0 percentile acc: 0.9524 rejection rate 0.5983 in: 0.5181 out: 0.9111
+45.0 percentile acc: 0.9524 rejection rate 0.55 in: 0.4598 out: 0.9016
+50.0 percentile acc: 0.9316 rejection rate 0.5 in: 0.412 out: 0.843
+55.0 percentile acc: 0.9185 rejection rate 0.45 in: 0.3611 out: 0.7966
+60.0 percentile acc: 0.8957 rejection rate 0.4 in: 0.3193 out: 0.7143
+65.0 percentile acc: 0.8895 rejection rate 0.3499 in: 0.2664 out: 0.6755
+70.0 percentile acc: 0.872 rejection rate 0.3001 in: 0.2247 out: 0.5941
+75.0 percentile acc: 0.8493 rejection rate 0.2501 in: 0.1878 out: 0.4929
+80.0 percentile acc: 0.8337 rejection rate 0.2001 in: 0.1429 out: 0.4229
+85.0 percentile acc: 0.8105 rejection rate 0.1501 in: 0.1036 out: 0.3311
+90.0 percentile acc: 0.7801 rejection rate 0.0979 in: 0.0718 out: 0.1996
+95.0 percentile acc: 0.7597 rejection rate 0.05 in: 0.0335 out: 0.1145
+best purity 0.7574821394091523 thresh: 2.1964596889019017 with acc: 0.8097826086956522
+BEST ACCURACY BP APP: 0.9321010939268201
+C:\Users\ischelle\PycharmProjects\results_based\venv\lib\site-packages\sklearn\metrics\_classification.py:2141: UserWarning: labels size, 7, does not match size of target_names, 9
+  warnings.warn(
+******
+bp_app_cf
+[[   8    0    0    0    0    0    0    0   22]
+ [   0    0    0    0    0    0    0    0   28]
+ [   0    0  616    0    0    1    1    0  393]
+ [   0    0    0  219    0    0    0    0  102]
+ [   0    0    0    0   10    0    0    0   25]
+ [   0    0    0    0    0 1522    0    0  567]
+ [   0    0    1    0    0    0   61    0  165]
+ [   0    0    6    0    0    2    0   35  337]
+ [   1    0   23   84    0   17    0   44  888]]
+acc: 0.9321010939268201
+recall: 0.849323526269917
+precision: 0.7473950389308659
+F1: 0.7882568148829698
+TNR: 0.6022809997573404 
+TPR: 0.8401135288552507
+Rejection Rate: 0.4880262649671688
+Purity: 0.6485808071056188
+Purity rate 2: 0.6487060641174198
+Their FDR: 0.3977190002426596
+Thier TDR: 0.8401135288552507
+normal acc, recall, etc 0.6487060641174198 0.41927124379409286 0.703396126589561
+               precision    recall  f1-score   support
+
+      dropbox       0.89      1.00      0.94         8
+     facebook       0.95      1.00      0.97       618
+       google       0.72      1.00      0.84       219
+    microsoft       1.00      1.00      1.00        10
+   teamviewer       0.99      1.00      0.99      1522
+      twitter       0.98      0.98      0.98        62
+      youtube       0.44      0.81      0.57        43
+
+    micro avg       0.93      1.00      0.96      2482
+    macro avg       0.85      0.97      0.90      2482
+ weighted avg       0.95      1.00      0.97      2482
+
+******
+TEST BP APP - END
+K+1/ABSTENTION TEST BEGIN - MALWARE
+C:\Users\ischelle\PycharmProjects\results_based\venv\lib\site-packages\sklearn\metrics\_classification.py:2141: UserWarning: labels size, 2, does not match size of target_names, 3
+  warnings.warn(
+******
+abstention_malware
+[[2781   64   64]
+ [  27 2896   24]
+ [ 118  161 1764]]
+acc: 0.9388126343641475
+recall: 0.6560891028288861
+precision: 0.6261173381445224
+F1: 0.6406967324049598
+TNR: 0.9849726775956285 
+TPR: 0.8634361233480177
+Rejection Rate: 0.23446005823521965
+Purity: 0.9316389132340053
+Purity rate 2: 0.9550807537012113
+Their FDR: 0.015027322404371546
+Thier TDR: 0.8634361233480177
+normal acc, recall, etc 0.9420179769591087 0.9340430045532152 0.9436119385764878
+              precision    recall  f1-score   support
+
+      Benign       0.95      0.98      0.96      2845
+     Malware       0.93      0.99      0.96      2923
+
+   micro avg       0.94      0.98      0.96      5768
+   macro avg       0.94      0.98      0.96      5768
+weighted avg       0.94      0.98      0.96      5768
+
+******
+K+1/ABSTENTION TEST END - MALWARE
+TEST ODIN MALWARE - BEGIN 0.0001
+247/247 [==============================] - 0s 1ms/step
+0.0 %
+Finished creating perturbed dataset
+247/247 [==============================] - 0s 1ms/step
+100.0 percentile acc: 0.7273 rejection rate 0.0 in: 0.0 out: 0.0
+95.0 percentile acc: 0.7603 rejection rate 0.05 in: 0.0096 out: 0.1659
+90.0 percentile acc: 0.7924 rejection rate 0.1 in: 0.028 out: 0.3064
+85.0 percentile acc: 0.8205 rejection rate 0.15 in: 0.0519 out: 0.4312
+80.0 percentile acc: 0.8505 rejection rate 0.1999 in: 0.0772 out: 0.5516
+75.0 percentile acc: 0.8658 rejection rate 0.25 in: 0.1207 out: 0.6207
+70.0 percentile acc: 0.8714 rejection rate 0.3 in: 0.175 out: 0.6583
+65.0 percentile acc: 0.8732 rejection rate 0.35 in: 0.2333 out: 0.6848
+60.0 percentile acc: 0.8744 rejection rate 0.4001 in: 0.292 out: 0.7097
+55.0 percentile acc: 0.8723 rejection rate 0.4498 in: 0.3523 out: 0.7293
+50.0 percentile acc: 0.869 rejection rate 0.4996 in: 0.4131 out: 0.7474
+45.0 percentile acc: 0.8637 rejection rate 0.5494 in: 0.4749 out: 0.7631
+40.0 percentile acc: 0.8532 rejection rate 0.5991 in: 0.5384 out: 0.7729
+35.0 percentile acc: 0.8477 rejection rate 0.6459 in: 0.5949 out: 0.792
+30.0 percentile acc: 0.8329 rejection rate 0.691 in: 0.6528 out: 0.8003
+25.0 percentile acc: 0.8137 rejection rate 0.7336 in: 0.7077 out: 0.8081
+20.0 percentile acc: 0.7922 rejection rate 0.7691 in: 0.7532 out: 0.8145
+15.0 percentile acc: 0.7922 rejection rate 0.7691 in: 0.7532 out: 0.8145
+10.0 percentile acc: 0.7922 rejection rate 0.7691 in: 0.7532 out: 0.8145
+5.0 percentile acc: 0.7922 rejection rate 0.7691 in: 0.7532 out: 0.8145
+best a 0.8762202983974949 best t 0.9968896183371544
+best purity 0.7817625458996328 thresh: 0.8628130114078522 with acc: 0.8170156296077853
+BEST ACCURACY ODIN MALWARE: 0.8762202983974949
+******
+odin_malware_cf
+[[2365    1  543]
+ [  10 2392  545]
+ [ 659    2 1382]]
+acc: 0.8762202983974949
+recall: 0.6651380494652127
+precision: 0.5927488005343293
+F1: 0.6244052996085516
+TNR: 0.8142076502732241 
+TPR: 0.6764561918746941
+Rejection Rate: 0.31269780984934803
+Purity: 0.6830978079448091
+Purity rate 2: 0.6850518433179723
+Their FDR: 0.18579234972677594
+Thier TDR: 0.6764561918746941
+C:\Users\ischelle\PycharmProjects\results_based\venv\lib\site-packages\sklearn\metrics\_classification.py:2141: UserWarning: labels size, 2, does not match size of target_names, 3
+  warnings.warn(
+normal acc, recall, etc 0.7771869856943917 0.7670410785414866 0.7792535238811579
+              precision    recall  f1-score   support
+
+      Benign       0.78      1.00      0.88      2366
+     Malware       1.00      1.00      1.00      2402
+
+   micro avg       0.88      1.00      0.93      4768
+   macro avg       0.89      1.00      0.94      4768
+weighted avg       0.89      1.00      0.94      4768
+
+******
+TEST ODIN MALWARE - END
+TEST BP MALWARE - BEGIN
+0.0 percentile acc: 1.0 rejection rate 0.9999 in: 0.9998 out: 1.0
+5.0 percentile acc: 1.0 rejection rate 0.95 in: 0.9325 out: 1.0
+10.0 percentile acc: 1.0 rejection rate 0.9 in: 0.8651 out: 1.0
+15.0 percentile acc: 0.9992 rejection rate 0.85 in: 0.7978 out: 0.9995
+20.0 percentile acc: 0.9994 rejection rate 0.8 in: 0.7304 out: 0.9995
+25.0 percentile acc: 0.9995 rejection rate 0.75 in: 0.6629 out: 0.9995
+30.0 percentile acc: 0.9987 rejection rate 0.7 in: 0.5958 out: 0.9985
+35.0 percentile acc: 0.9986 rejection rate 0.65 in: 0.5285 out: 0.998
+40.0 percentile acc: 0.9978 rejection rate 0.5999 in: 0.4616 out: 0.9966
+45.0 percentile acc: 0.9947 rejection rate 0.5499 in: 0.3962 out: 0.9907
+50.0 percentile acc: 0.9919 rejection rate 0.4999 in: 0.3308 out: 0.9848
+55.0 percentile acc: 0.9834 rejection rate 0.4501 in: 0.2702 out: 0.9657
+60.0 percentile acc: 0.9766 rejection rate 0.4001 in: 0.2092 out: 0.9471
+65.0 percentile acc: 0.9667 rejection rate 0.35 in: 0.1504 out: 0.9222
+70.0 percentile acc: 0.9313 rejection rate 0.3 in: 0.1177 out: 0.8228
+75.0 percentile acc: 0.8958 rejection rate 0.25 in: 0.0898 out: 0.7093
+80.0 percentile acc: 0.861 rejection rate 0.1993 in: 0.0651 out: 0.5839
+85.0 percentile acc: 0.826 rejection rate 0.15 in: 0.0461 out: 0.4479
+90.0 percentile acc: 0.791 rejection rate 0.0999 in: 0.029 out: 0.303
+95.0 percentile acc: 0.7601 rejection rate 0.05 in: 0.0084 out: 0.1694
+best purity 0.8741772151898735 thresh: 0.17793670409917892 with acc: 0.963855421686747
+BEST ACCURACY BP MALWARE: 0.9919779393331662
+C:\Users\ischelle\PycharmProjects\results_based\venv\lib\site-packages\sklearn\metrics\_classification.py:2141: UserWarning: labels size, 2, does not match size of target_names, 3
+  warnings.warn(
+******
+bp_malware_cf
+[[2016    1  892]
+ [   0 1941 1006]
+ [  29    2 2012]]
+acc: 0.9919779393331662
+recall: 0.6665014047264916
+precision: 0.6614252870093674
+F1: 0.6639474249518562
+TNR: 0.6758879781420765 
+TPR: 0.9848262359275575
+Rejection Rate: 0.49499936700848207
+Purity: 0.7555696202531645
+Purity rate 2: 0.7556652740853272
+Their FDR: 0.32411202185792354
+Thier TDR: 0.9848262359275575
+normal acc, recall, etc 0.7556652740853272 0.7788279312568408 0.8329512887143973
+              precision    recall  f1-score   support
+
+      Benign       0.99      1.00      0.99      2017
+     Malware       1.00      1.00      1.00      1941
+
+   micro avg       0.99      1.00      1.00      3958
+   macro avg       0.99      1.00      1.00      3958
+weighted avg       0.99      1.00      1.00      3958
+
+******
+TEST BP MALWARE - END
+
+Process finished with exit code 0
